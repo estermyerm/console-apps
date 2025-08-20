@@ -44,7 +44,20 @@ namespace AskConsoleApp
                 Console.WriteLine("No favorite months selected");
             }
 
-            AnsiConsole.Markup("Press [yellow]any[/] key to close");
+			if (person.FavoriteSports.Any())
+			{
+				Console.WriteLine("Favorite sports");
+				foreach (var sport in person.FavoriteSports)
+				{
+					Console.WriteLine($"{sport, 12}");
+				}
+			}
+			else
+			{
+				Console.WriteLine("No favorite months selected");
+			}
+
+			AnsiConsole.Markup("Press [yellow]any[/] key to close");
 
         }
 
@@ -85,7 +98,8 @@ namespace AskConsoleApp
                 FirstName = Prompts.GetFirstName(),
                 LastName = Prompts.GetLastName(),
                 BirthDate = Prompts.GetBirthDate(),
-                FavoriteMonths = Prompts.GetFavoriteMonths()
+                FavoriteMonths = Prompts.GetFavoriteMonths(),
+                FavoriteSports = Prompts.GetFavSports()
             };
 
         private static void PanelBorders()

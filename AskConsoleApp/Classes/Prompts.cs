@@ -114,5 +114,18 @@ namespace AskConsoleApp.Classes
                 .HighlightStyle(new Style(Color.White, Color.Black, Decoration.Invert))
         );
 
-    }
+
+
+		public static List<string> GetFavSports() => AnsiConsole.Prompt
+		(
+			new MultiSelectionPrompt<string>()
+				.PageSize(12)
+				.Required(false)
+				.Title("What are your [cyan]favorite sports[/]?")
+				.InstructionsText("[grey](Press [yellow]<space>[/] to toggle a month, [yellow]<enter>[/] to accept)[/] or [red]Enter[/] w/o any selections to cancel")
+				.AddChoices(new string[] { "Football", "Baseball", "Basketball", "Lacrosse", "Hockey" })
+				.HighlightStyle(new Style(Color.White, Color.Black, Decoration.Invert))
+		);
+
+	}
 }

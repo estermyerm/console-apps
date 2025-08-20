@@ -13,6 +13,8 @@ namespace AskConsoleApp.Models
         public DateTime? BirthDate { get; set; }
         public List<string> FavoriteMonths { get; set; }
         public string Age() => BirthDate == MinValue ? "" : BirthDate?.Age(Now).YearsMonthsDays;
+        public List<string> FavoriteSports { get; set; }
+
 
     }
 }
